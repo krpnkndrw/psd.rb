@@ -1,3 +1,4 @@
+$LOAD_PATH.unshift File.dirname(__FILE__)
 require 'forwardable'
 require 'psd/enginedata'
 require 'chunky_png'

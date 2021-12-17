@@ -54,6 +54,8 @@ class PSD
         visible = true
         found = false
 
+        # pp c.metadata.data[:layer_comp]['layerSettings']
+
         c
           .metadata
           .data[:layer_comp]['layerSettings'].each do |l|
