@@ -130,6 +130,8 @@ class PSD
         end
 
         root.psd.layer_comps.each do |comp|
+          # pp comp[:id]
+          # pp '***'
           hash[:layer_comps][comp[:name]] = {
             visible: visible_in_comp?(comp[:id]),
             position: position_in_comp(comp[:id])

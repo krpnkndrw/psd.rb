@@ -18,11 +18,13 @@ class PSD
       @data[:class] = parse_class
       num_items = @file.read_int
 
+
       PSD.logger.debug "Class = #{@data[:class]}, Item count = #{num_items}"
 
       num_items.times do |i|
         id, value = parse_key_item
         @data[id] = value
+        # pp value
       end
 
       @data

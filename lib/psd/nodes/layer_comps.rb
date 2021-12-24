@@ -20,6 +20,8 @@ class PSD
 
       def visible_in_comp?(id)
         determine_visibility(find_comp(id), self)
+        # pp id
+        pp  determine_visibility(find_comp(id), self)
       end
 
       def position_in_comp(id)
@@ -55,14 +57,21 @@ class PSD
         found = false
 
         # pp c.metadata.data[:layer_comp]['layerSettings']
+        # pp comp[:id]
 
         c
           .metadata
           .data[:layer_comp]['layerSettings'].each do |l|
             visible = l['enab'] if l.has_key?('enab')
-            found = true and break if l['compList'].include?(comp[:id])
+            found = true and break if l['compList'].include?(comp[:id])   
+            # pp comp[:id]
+            pp l['compList']
+            # pp visible
+            # pp found
+            pp '----'
           end
-
+        
+        # pp found && visible
         found && visible
       end
 
